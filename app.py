@@ -5,7 +5,7 @@ from PIL import Image
 
 def main():
 	streamlit.markdown("""# Welcome to Image Resizing Tool""")
-	banner = cv2.imread('newplot.png')
+	banner = cv2.imread('banner.jpg')
         streamlit.image(banner)
 	img = streamlit.file_uploader("Upload your image", type=['jpg'])
 	if img:
