@@ -1,8 +1,9 @@
 import streamlit
+import os
+os.system('sudo apt-get install libsm6 libxrender1 libfontconfig1')
 import base64
 import cv2
 from PIL import Image
-import os
 
 def main():
 	streamlit.markdown("""# Welcome to Image Resizing Tool""")
@@ -26,4 +27,3 @@ def main():
 			streamlit.markdown(html, unsafe_allow_html=True)
 if __name__=='__main__':
     main()
-    os.system('sudo apt-get install libsm6 libxrender1 libfontconfig1')
