@@ -10,7 +10,7 @@ def main():
 		enc_str = base64.b64encode(f.read()).decode()
 	html = f'<img src="data:image/png;base64,{enc_str}">'
 	streamlit.markdown(html, unsafe_allow_html=True)
-	img = streamlit.file_uploader("Upload your image", type=['jpeg'])
+	img = streamlit.file_uploader("Upload your image", type=['jpg'])
 	if img:
 		im = Image.open(img)
 		im.save('buff.jpeg')
