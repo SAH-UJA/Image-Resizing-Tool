@@ -1,6 +1,4 @@
 import streamlit
-import os
-os.system('sudo apt-get install libsm6 libxrender1 libfontconfig1')
 import base64
 import cv2
 from PIL import Image
