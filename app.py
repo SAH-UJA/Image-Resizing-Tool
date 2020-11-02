@@ -5,11 +5,8 @@ from PIL import Image
 
 def main():
 	streamlit.markdown("""# Welcome to Image Resizing Tool""")
-	enc_str = ""
-	with open('newplot.png','rb') as f:
-		enc_str = base64.b64encode(f.read()).decode()
-	html = f'<img src="data:image/png;base64,{enc_str}">'
-	streamlit.markdown(html, unsafe_allow_html=True)
+	banner = cv2.imread('newplot.png')
+        streamlit.image(banner)
 	img = streamlit.file_uploader("Upload your image", type=['jpg'])
 	if img:
 		im = Image.open(img)
