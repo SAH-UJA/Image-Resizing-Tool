@@ -10,13 +10,13 @@ def main():
 		enc_str = base64.b64encode(f.read()).decode()
 	html = f'<img src="data:image/png;base64,{enc_str}">'
 	streamlit.markdown(html, unsafe_allow_html=True)
-	img = streamlit.file_uploader("Upload your image", type=['png'])
+	img = streamlit.file_uploader("Upload your image", type=['jpeg'])
 	if img:
 		im = Image.open(img)
-		im.save('buff.png')
+		im.save('buff.jpeg')
 		width = streamlit.slider("width", min_value=100, max_value=1000, step=10)
 		height = streamlit.slider("height", min_value=100, max_value=1000, step=10)
-		im = cv2.resize(cv2.imread('buff.png'), (width,height))
+		im = cv2.resize(cv2.imread('buff.jpeg'), (width,height))
 		streamlit.image(im)
 		cv2.imwrite('graph.jpeg', im)
 		with open('graph.jpeg','rb') as f:
